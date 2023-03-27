@@ -1,0 +1,56 @@
+graph Batiz{
+
+    edge[dir=both];
+
+    A -- B[weight=27.2]
+    B -- C[weight=25.73]
+    C -- D
+    D -- {E , P , G}[weight=2,weight=3,weight=4]
+    E -- F
+    P -- {Q , O , R , U}
+    
+    subgraph Cubiculos{
+
+    R -- S;
+    S -- T;
+
+    };
+
+    O -- {M , W1};
+    M -- {N , K};
+    K -- {L , J};
+    H -- {J , G , I};
+
+    subgraph Escaleras{
+
+        edge[dir=forward]
+        O -- W -- X -- Z
+        U -- V -- Y -- A1
+
+    };
+
+    subgraph Piso1{
+
+        E1 -- {W , V , C1 , G1}
+        C1 -- {B1 , D1}
+        G1 -- {F1 , H1}
+
+    }
+
+    subgraph Piso2{
+
+        L1 -- {X , Y , J1 , N1}
+        J1 -- {I1 , K1}
+        N1 -- {M1 , O1}
+
+    }
+
+    subgraph Piso3{
+
+        S1 -- {Z , A1 , Q1 , U1}
+        Q1 -- {P1 , R1}
+        U1 -- {T1 , V1}
+
+    }
+
+}
